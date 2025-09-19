@@ -1,0 +1,24 @@
+---
+title: "MA 615 inclass activity"
+---
+
+Explanatory paragraph: For this activity, we are using the data from a case-control study of (o)esophageal cancer in Ille-et-Vilaine, France. In the data set, there are 5 different variables. First, the variable called age group contains different age ranges of patients. it is mainly been divided to 6 ranges, 25 to 34, 35 to 44, 45 to 54, 55 to 64, 65 to 74, and over 75 years old. We can analyze which age range has the highest probability to get (o)esophageal cancer. Second, we have the alcohol consumption, with the unit of gm/day. We can analyze and know how much alcohol consumption will lead to cancer, with 4 different groups of alcohol consumption. Those 4 groups are: 0 to 39, 40 to 79, 80 to 119, and more than 120 gm per day. Then, we have the variable of tobacco consumption. It is been separated into 4 groups, which are 0 to 9, 10 to 19, 20 to 29, and over 30 gm per day. After that, we have the number of cases and number of controls. 
+
+{r}
+data(esoph)
+head(esoph)
+?esoph
+
+
+library(ggplot2)
+
+proportion_cases <- esoph$ncases / (esoph$ncases + esoph$ncontrols)
+  
+  
+ggplot(esoph, aes(x = alcgp, y = proportion_cases)) + geom_boxplot()
+
+
+
+
+Interpretation: I think according to the graph, taking more alcohol and tobacco each day, it will lead to higher probability of getting cancer. 
+
